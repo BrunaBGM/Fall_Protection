@@ -96,3 +96,4 @@ C:\Users\bruna\source\repos\Fall_Protection\Fall_Protection\obj\Debug\net6.0\Fal
 C:\Users\bruna\source\repos\Fall_Protection\Fall_Protection\obj\Debug\net6.0\Fall_Protection.genruntimeconfig.cache
 C:\Users\bruna\source\repos\Fall_Protection\Fall_Protection\obj\Debug\net6.0\ref\Fall_Protection.dll
 C:\Users\bruna\source\repos\Fall_Protection\Fall_Protection\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\bruna\source\repos\Fall_Protection\Fall_Protection\obj\Debug\net6.0\Fall_Protection.sourcelink.json

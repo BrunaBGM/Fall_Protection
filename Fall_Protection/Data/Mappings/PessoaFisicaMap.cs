@@ -21,13 +21,34 @@ namespace Fall_Protection.Data.Mappings
                 new PessoaFisica
                 {
                     PessoaFisicaId = 1,
-                    PessoaId = 2,
+                    PessoaId = 1,
                     Cpf = "71273092058",
                     Rg = "162068414",
                     DataNascimento = new DateTime(1990,04,09),
                     EnderecoId = 1,
+                    Genero = GeneroEnum.Feminino
+                },
+                new PessoaFisica
+                {
+                    PessoaFisicaId = 2,
+                    PessoaId = 3,
+                    Cpf = "64341166085",
+                    Rg = "315423699",
+                    DataNascimento = new DateTime(2000, 07, 12),
+                    EnderecoId = 3,
                     Genero = GeneroEnum.Masculino
-                });
+                },
+                new PessoaFisica
+                {
+                    PessoaFisicaId = 3,
+                    PessoaId = 5,
+                    Cpf = "14233317027",
+                    Rg = "332345117",
+                    DataNascimento = new DateTime(1998, 10, 03),
+                    EnderecoId = 5,
+                    Genero = GeneroEnum.Masculino
+                }
+                );
         }
     }
 }

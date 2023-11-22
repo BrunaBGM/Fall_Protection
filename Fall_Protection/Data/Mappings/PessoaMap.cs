@@ -18,19 +18,51 @@ namespace Fall_Protection.Data.Mappings
                 new Pessoa
                 {
                     PessoaId = 1,
-                    Nome = "Bruna",
-                    Email = "bruna@gmail.com",
-                    Telefone = "9918889",
-                    TipoPessoa = "PessoaFisica"
+                    Nome = "Alana Stella",
+                    Email = "alana_aparicio@gmail.com",
+                    Telefone = "11 99531-0146",
+                    TipoPessoa = "Pessoa Física"
                 },
-                 new Pessoa
-                 {
-                     PessoaId = 2,
-                     Nome = "Jubileu",
-                     Email = "jubileu@gmail.com",
-                     Telefone = "9918889",
-                     TipoPessoa = "PessoaFisica"
-                 }
+                new Pessoa
+                {
+                    PessoaId = 2,
+                    Nome = "Rihappy",
+                    Email = "Rihappy@gmail.com",
+                    Telefone = "41 98689-4359",
+                    TipoPessoa = "Pessoa Jurídica"
+                },
+                new Pessoa
+                {
+                    PessoaId = 3,
+                    Nome = "Paulo Antonio",
+                    Email = "paulo88@gmail.com",
+                    Telefone = "41 98807-9819",
+                    TipoPessoa = "Pessoa Física"
+                },
+                new Pessoa
+                {
+                    PessoaId = 4,
+                    Nome = "Taubaté Lanches",
+                    Email = "tblanches@gmail.com",
+                    Telefone = "11 97765-9190",
+                    TipoPessoa = "Pessoa Jurídica"
+                },
+                new Pessoa
+                {
+                    PessoaId = 5,
+                    Nome = "Marcelo Pereira",
+                    Email = "pereira2012@gmail.com",
+                    Telefone = "11 98788-6120",
+                    TipoPessoa = "Pessoa Física"
+                },
+                new Pessoa
+                {
+                    PessoaId = 6,
+                    Nome = "Clínica Saúde",
+                    Email = "saudeclinica@gmail.com",
+                    Telefone = "11 92345-6120",
+                    TipoPessoa = "Pessoa Jurídica"
+                }
 
                 );
         }

@@ -3,7 +3,7 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="py-3 mb-4"><span class="text-muted fw-light">Formulário /</span> Pessoa Física</h4>
     <div class="d-flex flex-row-reverse">
-        <a asp-controller="Home" asp-action="CadastrarClienteJuridico" class="btn btn-dark ">
+        <a asp-controller="Pessoa" asp-action="CadastroPessoaJuridica" class="btn btn-dark ">
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
             </svg>
@@ -18,8 +18,9 @@
 
                 </div>
                 <div class="card-body">
-                    <form asp-controller="Pessoa" asp-action="CadastrarPessoaFisica">
+                    <form asp-controller="Pessoa" asp-action="CadastroPessoaFisica">
                         <input asp-for="PessoaId" type="hidden" />
+                        <input asp-for="PessoaFisicaId" type="hidden" />
                         <input asp-for="Pessoa.TipoPessoa" type="hidden" value="Pessoa Fisica" />
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Nome</label>
@@ -48,9 +49,8 @@
                                            placeholder="john.doe"
                                            aria-label="john.doe"
                                            aria-describedby="basic-icon-default-email2" />
-                                    @*                                     <span id="basic-icon-default-email2" class="input-group-text">example.com</span> *@
                                 </div>
-                                @* <div class="form-text">You can use letters, numbers & periods</div> *@
+                               
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -117,7 +117,7 @@
                             <div class="col-sm-10">
                                 <div class="input-group input-group-merge">
                                     <div class="mb-3">
-                                        <select asp-for="Genero" asp-items="Html.GetEnumSelectList<GeneroEnum>()" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example"> 
+                                        <select asp-for="Genero" asp-items="Html.GetEnumSelectList<GeneroEnum>()" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
                                             <option selected>Selecione</option>
                                         </select>
                                     </div>

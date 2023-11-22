@@ -17,14 +17,11 @@ namespace Fall_Protection.Data.Entities
         public Endereco Endereco { get; set; }
         public Pessoa Pessoa { get; set; }
 
-
-        // Construtor sem parâmetros (construtor padrão)
         public PessoaFisica()
         {
-            // Pode inicializar propriedades padrão aqui, se necessário
-        }
 
-        // Construtor com parâmetros
+        }
+  
         public PessoaFisica(string cpf, string rg, DateTime dataNascimento, GeneroEnum genero, int enderecoId)
             
         {

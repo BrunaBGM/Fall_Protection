@@ -17,15 +17,7 @@ namespace Fall_Protection.Controllers
         {
             return View();
         }
-        public IActionResult CadastrarCliente()
-        {
-            return View();
-        }
 
-        public IActionResult CadastrarClienteJuridico()
-        {
-            return View();
-        }
         public IActionResult Privacy()
         {
             return View();

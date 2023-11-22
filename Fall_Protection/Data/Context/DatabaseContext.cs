@@ -35,6 +35,31 @@ namespace Fall_Protection.Data.Context
             modelBuilder.ApplyConfiguration(new PessoaMap());
             modelBuilder.ApplyConfiguration(new SensorMap());
             modelBuilder.ApplyConfiguration(new UsuarioMap());
+
+
+            modelBuilder.Entity<PessoaFisica>()
+              .HasOne(pf => pf.Pessoa)
+              .WithMany()
+              .HasForeignKey(pf => pf.PessoaId)
+              .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PessoaFisica>()
+               .HasOne(pf => pf.Endereco)
+               .WithMany()
+               .HasForeignKey(pf => pf.EnderecoId)
+               .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PessoaJuridica>()
+                .HasOne(pj => pj.Pessoa)
+                .WithMany()
+                .HasForeignKey(pj => pj.PessoaId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<PessoaJuridica>()
+                .HasOne(pj => pj.Endereco)
+                .WithMany()
+                .HasForeignKey(pj => pj.EnderecoId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
 
     }
