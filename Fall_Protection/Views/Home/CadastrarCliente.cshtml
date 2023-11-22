@@ -1,0 +1,197 @@
+﻿@model Fall_Protection.Data.Entities.PessoaFisica
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Formulário /</span> Pessoa Física</h4>
+    <div class="d-flex flex-row-reverse">
+        <a asp-controller="Home" asp-action="CadastrarClienteJuridico" class="btn btn-dark ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+            </svg>
+            Pessoa Jurídica
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-xxl">
+            <div class="card mb-4">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="mb-0">Tela de Cadastro</h5>
+
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Pessoa" asp-action="CadastrarPessoaFisica">
+                        <input asp-for="PessoaId" type="hidden" />
+                        <input asp-for="Pessoa.TipoPessoa" type="hidden" value="Pessoa Fisica" />
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Nome</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-merge">
+                                    <span id="basic-icon-default-fullname2" class="input-group-text">
+                                        <i class="bx bx-user"></i>
+                                    </span>
+                                    <input asp-for="Pessoa.Nome" type="text"
+                                           class="form-control"
+                                           id="basic-icon-default-fullname"
+                                           placeholder="John Doe"
+                                           aria-label="John Doe"
+                                           aria-describedby="basic-icon-default-fullname2" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-icon-default-email">Email</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-merge">
+                                    <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                                    <input asp-for="Pessoa.Email" type="text"
+                                           id="basic-icon-default-email"
+                                           class="form-control"
+                                           placeholder="john.doe"
+                                           aria-label="john.doe"
+                                           aria-describedby="basic-icon-default-email2" />
+                                    @*                                     <span id="basic-icon-default-email2" class="input-group-text">example.com</span> *@
+                                </div>
+                                @* <div class="form-text">You can use letters, numbers & periods</div> *@
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-2 form-label" for="basic-icon-default-phone">Telefone</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-merge">
+                                    <span id="basic-icon-default-phone2" class="input-group-text">
+                                        <i class="bx bx-phone"></i>
+                                    </span>
+                                    <input asp-for="Pessoa.Telefone" type="text"
+                                           id="basic-icon-default-phone"
+                                           class="form-control phone-mask"
+                                           placeholder="11 97990 8941"
+                                           aria-label="11 97990 8941"
+                                           aria-describedby="basic-icon-default-phone2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">CPF(Cadastro Pessoa Física)</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-merge">
+                                    <span id="basic-icon-default-fullname2" class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-person-vcard" viewBox="0 0 16 16">
+                                            <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z" />
+                                            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z" />
+                                        </svg>
+                                    </span>
+                                    <input asp-for="Cpf" type="text" class="form-control"
+                                           placeholder="111.678.980-77"
+                                           aria-label="111.678.980-77" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mb-3">
+                            <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">RG (Registro Geral)</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-merge">
+                                    <span id="basic-icon-default-fullname2" class="input-group-text">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                        </svg>
+                                    </span>
+                                    <input asp-for="Rg" type="text" class="form-control"
+                                           placeholder="10.324.908-6"
+                                           aria-label="10.324.908-6" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label for="html5-date-input" class="col-md-2 col-form-label">Data de nascimento</label>
+                            <div class="col-md-10">
+                                <input asp-for="DataNascimento" class="form-control" type="date" value="2023-11-24" id="html5-date-input" />
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label asp-for="Genero" class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Gênero</label>
+                            <div class="col-sm-10">
+                                <div class="input-group input-group-merge">
+                                    <div class="mb-3">
+                                        <select asp-for="Genero" asp-items="Html.GetEnumSelectList<GeneroEnum>()" class="form-select" id="exampleFormControlSelect1" aria-label="Default select example"> 
+                                            <option selected>Selecione</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-4">
+                            <input asp-for="EnderecoId" type="hidden" />
+                            <div class="divider">
+                                <div class="divider-text">Endereço</div>
+                            </div>
+                            <div class="container mt-5">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input1">CEP</label>
+                                            <input asp-for="Endereco.Cep" type="text" class="form-control" id="cep" placeholder="13.456-890">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="input2">Logradouro</label>
+                                            <input asp-for="Endereco.Logradouro" type="text" class="form-control" id="input2" placeholder="Ex:Rua,Alameda,Avenida...">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-2">
+                                            <label for="input2">Numero</label>
+                                            <input asp-for="Endereco.Numero" type="text" class="form-control" id="input2" placeholder="Digite algo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-2">
+                                            <label for="input2">Complemento</label>
+                                            <input asp-for="Endereco.Complemento" type="text" class="form-control" id="input2" placeholder="Opcional">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-2">
+                                            <label for="input2">Bairro</label>
+                                            <input asp-for="Endereco.Bairro" type="text" class="form-control" id="input2" placeholder="Digite">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-2">
+                                            <label for="input2">Cidade</label>
+                                            <input asp-for="Endereco.Cidade" type="text" class="form-control" id="input2" placeholder="Digite algo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-2">
+                                            <label for="input2">Estado</label>
+                                            <input asp-for="Endereco.Estado" type="text" class="form-control" id="input2" placeholder="Digite algo">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group mt-2">
+                                            <label for="input2">País</label>
+                                            <input asp-for="Endereco.Pais" type="text" class="form-control" id="input2" placeholder="Digite algo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row text-center">
+                            <div class="col-sm-10">
+                                <input type="submit" class="btn btn-primary" value="Enviar" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
