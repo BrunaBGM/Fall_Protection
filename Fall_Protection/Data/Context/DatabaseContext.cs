@@ -60,6 +60,8 @@ namespace Fall_Protection.Data.Context
                 .WithMany()
                 .HasForeignKey(pj => pj.EnderecoId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+
         }
 
     }

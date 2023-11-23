@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fall_Protection")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69fab6618db460ab9b552b9da354dedb823e9d3b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12cc65203833eb5cc88b0bfd210b0b4d4e72f3ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fall_Protection")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fall_Protection")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

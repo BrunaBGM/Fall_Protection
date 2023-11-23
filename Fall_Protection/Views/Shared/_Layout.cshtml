@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Fall_Protection</title>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Fall_Protection.styles.css" asp-append-version="true" />
@@ -114,7 +115,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="/Pessoa/Listar" class="menu-link">
+                                <a href="/Pessoa/Index" class="menu-link">
                                     <div>Lista</div>
                                 </a>
                             </li>
@@ -152,17 +153,19 @@
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <!-- Search -->
                         <div class="navbar-nav align-items-center">
-                            <div class="nav-item d-flex align-items-center">
+                            <form id="searchForm" asp-controller="Home" asp-action="PesquisarCliente" class="nav-item d-flex align-items-center">
                                 <i class="bx bx-search fs-4 lh-0"></i>
-                                <input type="text"
+                                <input id="searchInput"
+                                       type="text"
                                        class="form-control border-0 shadow-none ps-1 ps-sm-2"
                                        placeholder="Search..."
                                        aria-label="Search..." />
-                            </div>
+                                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                            </form>
                         </div>
                         <!-- /Search -->
 
-                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+@*                         <ul class="navbar-nav flex-row align-items-center ms-auto">
 
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -212,9 +215,9 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> *@
                             <!--/ User -->
-                        </ul>
+                        @* </ul> *@
                     </div>
                 </nav>
 
@@ -250,9 +253,7 @@
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
     <!-- / Layout wrapper -->
-
-@*     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -270,7 +271,21 @@
     <!-- Main JS -->
     <script src="~/assets/js/main.js"></script>
     <!-- Page JS -->
+
     <script src="~/assets/js/dashboards-analytics.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $('#searchForm').submit(function (e) {
+            var termo = $('#searchInput').val();
+            if (termo) {
+
+                window.location.href = '/Home/PesquisarCliente?termo=' + termo;
+            }
+            e.preventDefault();
+        });
+    });
+
+</script>

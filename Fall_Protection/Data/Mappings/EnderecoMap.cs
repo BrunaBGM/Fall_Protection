@@ -9,6 +9,7 @@ namespace Fall_Protection.Data.Mappings
         public void Configure(EntityTypeBuilder<Endereco> entity)
         {
             entity.Property(e => e.EnderecoId);
+            entity.Property(e => e.PessoaId);
             entity.Property(e => e.Cep).IsRequired();
             entity.Property(e => e.Logradouro).IsRequired();
             entity.Property(e => e.Numero).IsRequired();
@@ -22,6 +23,7 @@ namespace Fall_Protection.Data.Mappings
                 new Endereco
                 {
                     EnderecoId = 1,
+                    PessoaId = 1,
                     Cep = "04849341",
                     Logradouro = "Travessa Mirandela",
                     Numero = "446",
@@ -34,6 +36,7 @@ namespace Fall_Protection.Data.Mappings
                 new Endereco
                 {
                     EnderecoId = 2,
+                    PessoaId = 2,
                     Cep = "72020053",
                     Logradouro = "Rua Especial",
                     Numero = "10",
@@ -46,6 +49,7 @@ namespace Fall_Protection.Data.Mappings
                 new Endereco
                 {
                     EnderecoId = 3,
+                    PessoaId = 3,
                     Cep = "71880694",
                     Logradouro = "Rua Henri Jean Viana Júnior",
                     Numero = "465",
@@ -58,6 +62,7 @@ namespace Fall_Protection.Data.Mappings
                 new Endereco
                 {
                     EnderecoId = 4,
+                    PessoaId = 4,
                     Cep = "81320082",
                     Logradouro = "Rua Nicolau Hornung",
                     Numero = "446",
@@ -70,6 +75,7 @@ namespace Fall_Protection.Data.Mappings
                 new Endereco
                 {
                     EnderecoId = 5,
+                    PessoaId = 5,
                     Cep = "35057370",
                     Logradouro = "Rua Irlanda",
                     Numero = "843",
@@ -82,6 +88,7 @@ namespace Fall_Protection.Data.Mappings
                 new Endereco
                 {
                     EnderecoId = 6,
+                    PessoaId = 6,
                     Cep = "89023785",
                     Logradouro = "Rua Oscar Burger",
                     Numero = "665",

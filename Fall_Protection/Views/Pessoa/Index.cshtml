@@ -1,11 +1,10 @@
 ﻿@model List<Fall_Protection.Data.Entities.Cliente>
 
 <div class="card">
-    <h5 class="card-header">Tabela de Clientes</h5>
+    <h5 class="card-header">Clientes</h5>
 
     @if (Model.Any())
     {
-
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead class="table-dark">
@@ -15,15 +14,14 @@
                         <th>N Contrato</th>
                         <th>Status</th>
                         <th>Data Cadastro</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 @foreach (var item in Model)
                 {
                     <tbody class="table-border-bottom-0">
                         <tr>
-                            <td>
-                                <span class="fw-medium">@item.ClienteId</span>
-                            </td>
+                            <td><span class="fw-medium">@item.ClienteId</span></td>
                             <td>@item.Pessoa.Nome</td>
                             <td>@item.NumeroContrato</td>
 
@@ -49,17 +47,23 @@
                                         <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a asp-action="Editar" asp-route-id="@item.ClienteId" class="dropdown-item"><i class="bx bx-edit-alt me-1"></i> Editar</a>
-                                        <a asp-action="Deletar" asp-route-id="@item.PessoaId" class="dropdown-item" ><i class="bx bx-trash me-1"></i> Excluir</a>
+                                        <a asp-action="Editar" asp-route-id="@item.ClienteId" class="dropdown-item">
+                                            <i class="bx bx-edit-alt me-1"></i> Editar
+                                        </a>
+                                        <a asp-action="Deletar" asp-route-id="@item.ClienteId" class="dropdown-item ">
+                                            <i class="bx bx-trash me-1"></i> Excluir
+                                        </a>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-
                     </tbody>
                 }
             </table>
         </div>
-
+    }
+    else
+    {
+        <p class="text-center">Nenhum cliente encontrado.</p>
     }
 </div>

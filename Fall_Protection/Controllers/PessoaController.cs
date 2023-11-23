@@ -16,26 +16,10 @@ namespace Fall_Protection.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Listar()
+        public async Task<IActionResult> Index()
         {
             var clientes = await _context.Clientes.Include(c => c.Pessoa).ToListAsync();
             return View(clientes);
-        }
-
-        public async Task<IActionResult> Detalhes(int id)
-        {
-            if (id == 0)
-            {
-                return NotFound();
-            }
-
-            var pessoa = await _context.Pessoas.FirstOrDefaultAsync(m => m.PessoaId == id);
-            if (pessoa == null)
-            {
-                return NotFound("Cliente não encontrado");
-            }
-
-            return View(pessoa);
         }
 
         public IActionResult CadastroPessoaFisica()
@@ -70,39 +54,39 @@ namespace Fall_Protection.Controllers
                     _context.Clientes.Add(cliente);
                     _context.SaveChanges();
 
-                    return RedirectToAction("Listar");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
-                    var existingPessoaFisica = await _context.PessoasFisica
+                    var pessoaFisicaEntity = await _context.PessoasFisica
                         .Include(pf => pf.Pessoa)
                         .Include(pf => pf.Endereco)
                         .FirstOrDefaultAsync(p => p.PessoaFisicaId == pessoaFisica.PessoaFisicaId);
 
-                    if (existingPessoaFisica != null)
+                    if (pessoaFisicaEntity != null)
                     {
-                        existingPessoaFisica.Pessoa.Nome = pessoaFisica.Pessoa.Nome;
-                        existingPessoaFisica.Pessoa.Email = pessoaFisica.Pessoa.Email;
-                        existingPessoaFisica.Pessoa.Telefone = pessoaFisica.Pessoa.Telefone;
-                        existingPessoaFisica.Cpf = pessoaFisica.Cpf;
-                        existingPessoaFisica.Rg = pessoaFisica.Rg;
-                        existingPessoaFisica.DataNascimento = pessoaFisica.DataNascimento;
-                        existingPessoaFisica.Genero = pessoaFisica.Genero;
-                        existingPessoaFisica.Endereco.Cep = pessoaFisica.Endereco.Cep;
-                        existingPessoaFisica.Endereco.Logradouro = pessoaFisica.Endereco.Logradouro;
-                        existingPessoaFisica.Endereco.Numero = pessoaFisica.Endereco.Numero;
-                        existingPessoaFisica.Endereco.Complemento = pessoaFisica.Endereco.Complemento;
-                        existingPessoaFisica.Endereco.Bairro = pessoaFisica.Endereco.Bairro;
-                        existingPessoaFisica.Endereco.Cidade = pessoaFisica.Endereco.Cidade;
-                        existingPessoaFisica.Endereco.Estado = pessoaFisica.Endereco.Estado;
-                        existingPessoaFisica.Endereco.Pais = pessoaFisica.Endereco.Pais;
-
-                        _context.Update(existingPessoaFisica);
+                        pessoaFisicaEntity.Pessoa.Nome = pessoaFisica.Pessoa.Nome;
+                        pessoaFisicaEntity.Pessoa.Email = pessoaFisica.Pessoa.Email;
+                        pessoaFisicaEntity.Pessoa.Telefone = pessoaFisica.Pessoa.Telefone;
+                        pessoaFisicaEntity.Cpf = pessoaFisica.Cpf;
+                        pessoaFisicaEntity.Rg = pessoaFisica.Rg;
+                        pessoaFisicaEntity.DataNascimento = pessoaFisica.DataNascimento;
+                        pessoaFisicaEntity.Genero = pessoaFisica.Genero;
+                        pessoaFisicaEntity.Endereco.Cep = pessoaFisica.Endereco.Cep;
+                        pessoaFisicaEntity.Endereco.Logradouro = pessoaFisica.Endereco.Logradouro;
+                        pessoaFisicaEntity.Endereco.Numero = pessoaFisica.Endereco.Numero;
+                        pessoaFisicaEntity.Endereco.Complemento = pessoaFisica.Endereco.Complemento;
+                        pessoaFisicaEntity.Endereco.Bairro = pessoaFisica.Endereco.Bairro;
+                        pessoaFisicaEntity.Endereco.Cidade = pessoaFisica.Endereco.Cidade;
+                        pessoaFisicaEntity.Endereco.Estado = pessoaFisica.Endereco.Estado;
+                        pessoaFisicaEntity.Endereco.Pais = pessoaFisica.Endereco.Pais;
+                        
+                        _context.Update(pessoaFisicaEntity);
                         _context.SaveChanges();
                     }
                 }
 
-                return RedirectToAction("Listar");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
@@ -119,13 +103,13 @@ namespace Fall_Protection.Controllers
             {
                 if (pessoaJuridica.PessoaJuridicaId == 0)
                 {
+                    
                     _context.PessoasJuridica.Add(pessoaJuridica);
                     _context.SaveChanges();
 
                     Cliente cliente = new Cliente
                     {
                         PessoaId = pessoaJuridica.PessoaId,
-                        DataCadastro = DateTime.Now,
                         StatusCliente = StatusEnum.Ativo
                     };
 
@@ -134,7 +118,7 @@ namespace Fall_Protection.Controllers
                     _context.Clientes.Add(cliente);
                     _context.SaveChanges();
 
-                    return RedirectToAction("Listar");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
@@ -162,7 +146,7 @@ namespace Fall_Protection.Controllers
                         _context.SaveChanges();
                     }
 
-                    return RedirectToAction("Listar");
+                    return RedirectToAction("Index");
                 }
 
                
@@ -221,7 +205,7 @@ namespace Fall_Protection.Controllers
                 _context.Pessoas.Remove(pessoa);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Listar");
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {
