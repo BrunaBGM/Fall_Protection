@@ -63,10 +63,11 @@ namespace Fall_Protection.Controllers
         [HttpGet]
         public IActionResult PesquisarCliente(string termo)
         {
+            var usuariosEncontrados = _context.Pessoas
+                .Where(t => t.Nome.Contains(termo) || t.TipoPessoa.Contains(termo))
+                .ToList();
 
-            var usuariosEncontrados= _context.Pessoas.Where(t => t.Nome.Contains(termo) || t.TipoPessoa.Contains(termo)).ToList();
-
-            return RedirectToAction("Pessoa","Index", usuariosEncontrados);
+            return RedirectToAction ("Index","Pessoa", usuariosEncontrados);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

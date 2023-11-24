@@ -77,7 +77,7 @@ namespace Fall_Protection.Controllers
 
             if (sensorEntity == null)
             {
-                return NotFound("Cliente não encontrado");
+                return NotFound("Sensor não encontrado");
                         
             }
 

@@ -19,21 +19,15 @@
           rel="stylesheet" />
 
     <link rel="stylesheet" href="~/assets/vendor/fonts/boxicons.css" />
-
-    <!-- Core CSS -->
     <link rel="stylesheet" href="~/assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="~/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="~/assets/css/demo.css" />
 
-    <!-- Vendors CSS -->
     <link rel="stylesheet" href="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="~/assets/vendor/libs/apex-charts/apex-charts.css" />
 
-    <!-- Page CSS -->
-    <!-- Helpers -->
     <script src="~/assets/vendor/js/helpers.js"></script>
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+  
     <script src="~/assets/js/config.js"></script>
 </head>
 <body>
@@ -110,7 +104,7 @@
                                 <span class="menu-header-text">Clientes</span>
                             </li>
                             <li class="menu-item">
-                                <a href="/Pessoa/CadastroPessoaFisica" class="menu-link">                   
+                                <a href="/Pessoa/CadastroPessoaFisica" class="menu-link">
                                     <div>Cadastro</div>
                                 </a>
                             </li>
@@ -152,72 +146,22 @@
 
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <!-- Search -->
+
                         <div class="navbar-nav align-items-center">
-                            <form id="searchForm" asp-controller="Home" asp-action="PesquisarCliente" class="nav-item d-flex align-items-center">
+                            <div class="nav-item d-flex align-items-center">
                                 <i class="bx bx-search fs-4 lh-0"></i>
-                                <input id="searchInput"
+                                <input id="search-input"
                                        type="text"
                                        class="form-control border-0 shadow-none ps-1 ps-sm-2"
                                        placeholder="Search..."
                                        aria-label="Search..." />
-                                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                            </form>
+                            </div>
                         </div>
                         <!-- /Search -->
 
-@*                         <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-                            <!-- User -->
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                    <div class="avatar avatar-online">
-                                        <img src="~/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar avatar-online">
-                                                        <img src="~/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <span class="fw-medium d-block">John Doe</span>
-                                                    <small class="text-muted">Admin</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-user me-2"></i>
-                                            <span class="align-middle">My Profile</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <i class="bx bx-cog me-2"></i>
-                                            <span class="align-middle">Settings</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="dropdown-divider"></div>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="javascript:void(0);">
-                                            <i class="bx bx-power-off me-2"></i>
-                                            <span class="align-middle">Log Out</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li> *@
-                            <!--/ User -->
-                        @* </ul> *@
+                        <div class="navbar-nav flex-row align-items-center ms-auto">
+                            <a id="search-link" href="#" class="btn rounded-pill btn-secondary">Search</a>
+                        </div>
                     </div>
                 </nav>
 
@@ -245,18 +189,12 @@
 
                     <div class="content-backdrop fade"></div>
                 </div>
-                <!-- Content wrapper -->
             </div>
-            <!-- / Layout page -->
         </div>
         <!-- Overlay -->
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- / Layout wrapper -->
-    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
 
     <script src="~/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="~/assets/vendor/libs/popper/popper.js"></script>
@@ -264,28 +202,20 @@
     <script src="~/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="~/assets/vendor/js/menu.js"></script>
 
-    <!-- endbuild -->
-    <!-- Vendors JS -->
     <script src="~/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
-    <!-- Main JS -->
     <script src="~/assets/js/main.js"></script>
-    <!-- Page JS -->
 
     <script src="~/assets/js/dashboards-analytics.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
 <script>
-    $(document).ready(function () {
-        $('#searchForm').submit(function (e) {
-            var termo = $('#searchInput').val();
-            if (termo) {
+    document.getElementById('search-link').addEventListener('click', function (event) {
+        event.preventDefault();
 
-                window.location.href = '/Home/PesquisarCliente?termo=' + termo;
-            }
-            e.preventDefault();
-        });
+        var inputValue = document.getElementById('search-input').value;
+
+        window.location.href = '/Home/PesquisarCliente?termo=' + inputValue;
     });
-
 </script>

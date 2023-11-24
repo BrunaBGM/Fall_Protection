@@ -12,7 +12,7 @@ namespace Fall_Protection.Data.Mappings
             entity.Property(e => e.PessoaJuridicaId);
             entity.Property(e => e.PessoaId);
             entity.Property(e => e.EnderecoId);
-            entity.Property(e => e.Cnpj).HasMaxLength(14).IsRequired();
+            entity.Property(e => e.Cnpj).HasMaxLength(20).IsRequired();
 
             entity.HasData(
                 new PessoaJuridica

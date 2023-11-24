@@ -12,8 +12,8 @@ namespace Fall_Protection.Data.Mappings
             entity.Property(e => e.PessoaFisicaId);
             entity.Property(e => e.PessoaId);
             entity.Property(e => e.EnderecoId);
-            entity.Property(e => e.Cpf).HasMaxLength(11).IsRequired();
-            entity.Property(e => e.Rg).HasMaxLength(9).IsRequired();
+            entity.Property(e => e.Cpf).HasMaxLength(20).IsRequired();
+            entity.Property(e => e.Rg).HasMaxLength(20).IsRequired();
             entity.Property(e => e.DataNascimento).HasDefaultValueSql("getdate()").IsRequired();
             entity.Property(e => e.Genero).IsRequired();
 

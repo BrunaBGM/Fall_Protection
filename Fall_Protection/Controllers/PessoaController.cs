@@ -92,7 +92,7 @@ namespace Fall_Protection.Controllers
             {
                 Console.WriteLine($"Erro ao cadastrar Pessoa Física: {ex.Message}");
 
-                return RedirectToAction("Erro");
+                return RedirectToAction("Erro","Home");
             }
         }
 
@@ -155,7 +155,7 @@ namespace Fall_Protection.Controllers
             {
 
                 Console.WriteLine($"Erro ao cadastrar Pessoa Jurídica: {ex.Message}");
-                return RedirectToAction("Erro");
+                return RedirectToAction("Erro", "Home");
             }
         }
 
@@ -207,10 +207,9 @@ namespace Fall_Protection.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"Erro ao deletar Pessoa: {ex.Message}");
-                throw;
+                return RedirectToAction("Erro", "Home");
             }
         }
     }
