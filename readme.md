@@ -35,9 +35,10 @@ O projeto segue a estrutura básica do padrão MVC, com os seguintes diretórios
 
 ## Configuração do Banco de Dados SQL Server
 
-Para configurar a conexão com o banco de dados SQL Server, abra o arquivo `Program.cs` e atualize a string de conexão com as informações do seu servidor SQL Server.(autenticação pelo Windows)
-`const connectionString = "Data Source=nome_do_servidor;Initial Catalog=nome_do_banco;Integrated Security=SSPI;TrustServerCertificate=True";`
-
+Para configurar a conexão com o banco de dados SQL Server, abra o arquivo `Program.cs` e atualize a string de conexão com as informações do seu servidor SQL Server.(Autenticação pelo Windows)
+```
+const connectionString = "Data Source=nome_do_servidor;Initial Catalog=nome_do_banco;Integrated Security=SSPI;TrustServerCertificate=True";
+```
 ## Tecnologias
 
 1. .NET 6
